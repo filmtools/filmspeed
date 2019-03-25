@@ -40,9 +40,7 @@ $s2->getIso(); // "ISO 400/27°"
 ```php
 use FilmTools\FilmSpeed\FilmSpeedProviderInterface;
 
-/**
- * Returns the Film speed.
- */
+// Returns the Film speed.
 public function getFilmSpeed() : FilmSpeedInterface;
 ```
 
