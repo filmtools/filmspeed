@@ -35,27 +35,6 @@ $s2->getIso(); // "ISO 400/27°"
 
 ## Interfaces
 
-### FilmSpeedProviderInterface
-
-```php
-use FilmTools\FilmSpeed\FilmSpeedProviderInterface;
-
-// Returns the Film speed.
-public function getFilmSpeed() : FilmSpeedInterface;
-```
-
-
-
-### FilmSpeedAwareInterface
-
-```php
-use FilmTools\FilmSpeed\FilmSpeedAwareInterface;
-
-// Sets the Film speed.
-public function setFilmSpeed( FilmSpeedInterface $filmspeed );
-```
-
-
 
 ### FilmSpeedInterface
 
@@ -73,3 +52,33 @@ public function getAsa() : float;
 // Returns the Film speed as ISO-formatted string like "ISO 400/27°"
 public function getIso() : string;
 ```
+
+
+
+### FilmSpeedProvider Interface and Trait
+
+The **FilmSpeedProviderTrait** provides a protected **$filmspeed** attribute. It helps to fulfill the **FilmSpeedProviderInterface.**
+
+```php
+use FilmTools\FilmSpeed\FilmSpeedProviderInterface;
+use FilmTools\FilmSpeed\FilmSpeedProviderTrait;
+
+// Returns the Film speed.
+public function getFilmSpeed() : FilmSpeedInterface;
+```
+
+
+
+### FilmSpeedAwareInterface
+
+The **FilmSpeedAwareTrait** provides a **setFilmSpeed** setter method. It also uses the *FilmSpeedProviderTrait*.
+
+```php
+use FilmTools\FilmSpeed\FilmSpeedAwareInterface;
+use FilmTools\FilmSpeed\FilmSpeedAwareTrait;
+
+// Sets the Film speed.
+public function setFilmSpeed( FilmSpeedInterface $filmspeed );
+```
+
+
